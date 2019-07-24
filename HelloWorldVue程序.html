@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <title>第一个Vue程序</title>
+    </head>
+    <body>
+
+        <div id="FirstVue">
+            {{message}}
+        </div>
+
+        <script>
+            var myVue=new Vue({     //创建一个对象
+                el:'#FirstVue',     //用来指定所对应的唯一id
+                data: {             //用来定义数据
+                    message: 'Hello Vue World!'     //将信息输入对应{{message}}变量中
+                }
+            });
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>computed处理元数据</title>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="math">
+            今年3月3日发卖的任天堂新一代主机Switch的价格是：{{price}}円，含税价格为：{{priceInTax}}円，折合人民币为：{{priceChinaRMB}}元。
+        </div>
+        <script>
+            var maths=new Vue({
+                el: '#math',
+                data: {
+                    price: 29980
+                },
+                computed:{
+                    priceInTax:function(){
+                        return this.price * 1.08;
+                    },
+                    priceChinaRMB:function(){
+                        return Math.round(this.priceInTax/ 16.75);
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
